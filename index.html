@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Voice — Press to speak, it types for you</title>
+    <meta
+      name="description"
+      content="A macOS menu-bar app that turns speech into text anywhere, using your own API keys. Built for English and Indian languages."
+    />
+    <link rel="icon" type="image/svg+xml" href="./icon.svg" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-grid"></div>
+    <div class="bg-glow"></div>
+
+    <nav class="nav">
+      <a href="#" class="brand">
+        <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
+          <rect width="32" height="32" rx="6" fill="#0f172a" />
+          <rect x="3.5"  y="6"  width="3" height="20" rx="1.5" fill="#38bdf8" />
+          <rect x="9"    y="9"  width="3" height="14" rx="1.5" fill="#38bdf8" />
+          <rect x="14.5" y="12" width="3" height="8"  rx="1.5" fill="#38bdf8" />
+          <rect x="20"   y="9"  width="3" height="14" rx="1.5" fill="#38bdf8" />
+          <rect x="25.5" y="6"  width="3" height="20" rx="1.5" fill="#38bdf8" />
+        </svg>
+        <span>Voice</span>
+      </a>
+      <div class="nav-links">
+        <a href="#how">How it works</a>
+        <a href="#byok">BYOK</a>
+        <a href="#india">For India</a>
+        <a href="#download" class="nav-cta">Download</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-inner">
+        <span class="pill">macOS · v1.0.0-beta.1</span>
+        <h1>
+          Press to speak.<br />
+          It types for you.
+        </h1>
+        <p class="lead">
+          A quiet menu-bar app that turns your voice into text anywhere on your Mac.
+          Hold the right Option key, speak, release — the transcription lands in whatever
+          you were typing in. Works with your own API keys. No accounts, no lock-in.
+        </p>
+        <div class="cta-row">
+          <a href="https://github.com/byok-dev/voice-releases/releases/latest" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Download for macOS
+          </a>
+          <a href="https://github.com/byok-dev/voice-releases" class="btn btn-ghost">
+            View releases
+          </a>
+        </div>
+        <p class="subnote">
+          Universal build · Apple-notarized · Auto-updates · Apple Silicon + Intel
+        </p>
+      </div>
+
+      <div class="hero-card" aria-hidden="true">
+        <div class="hero-card-chrome">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="hero-card-body">
+          <div class="wave">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <p class="hero-card-status">Listening · Right Option held</p>
+          <div class="hero-card-output">
+            <p><em>You said:</em></p>
+            <p class="transcript">"Schedule the design review for Thursday at 4 and CC the whole product team."</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="how" class="section">
+      <h2 class="section-title">Three keys. That's the whole app.</h2>
+      <p class="section-sub">No launcher, no UI gymnastics. Live in the menu bar, summoned by a hotkey.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Hold</h3>
+          <p>Press and hold the right Option key from anywhere — Slack, a Doc, your terminal, an email reply.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Speak</h3>
+          <p>Say what you want to write. A discreet overlay shows you it's recording. Release when done.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Pasted</h3>
+          <p>Your words appear at the cursor, transcribed and optionally cleaned up by an LLM. That's it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section features">
+      <h2 class="section-title">Built for people who type all day</h2>
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>Fast</h3>
+          <p>Whisper-large-v3-turbo on Groq gives real-time transcription. A two-sentence reply is ready before you've reached for the keyboard.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
+          </div>
+          <h3>Smart post-processing</h3>
+          <p>Optional LLM pass cleans up filler words, adds punctuation, and formats lists. Toggle it per-session.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>History, always</h3>
+          <p>Your last 500 transcripts, searchable, stored locally. Nothing synced, nothing uploaded.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </div>
+          <h3>Stays out of the way</h3>
+          <p>No dock icon, no windows you have to close. A tiny overlay while recording, then silence.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <h3>Works anywhere</h3>
+          <p>Any app that accepts text: browsers, editors, chat, Figma, the terminal. It pastes into the focused field.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Notarized & auto-updating</h3>
+          <p>Signed by Apple, shipped as a universal DMG. New versions install silently on the next relaunch.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="byok" class="section byok">
+      <div class="byok-inner">
+        <span class="pill pill-accent">Bring your own key</span>
+        <h2>Your keys. Your provider. Your bill.</h2>
+        <p class="section-sub">
+          Voice never touches a server we operate. There's no sign-up, no subscription,
+          no telemetry, no "free tier" meant to trap you. Paste your own API key in
+          Settings and the audio goes directly from your Mac to the provider you chose.
+        </p>
+
+        <div class="byok-grid">
+          <div class="byok-card">
+            <h3>No vendor lock-in</h3>
+            <p>Switch providers in Settings and restart. Nothing migrates, because nothing was ever stored with us.</p>
+          </div>
+          <div class="byok-card">
+            <h3>No accounts</h3>
+            <p>There's no backend. You download the app, point it at a provider, and it works. That's the whole onboarding.</p>
+          </div>
+          <div class="byok-card">
+            <h3>No data retention</h3>
+            <p>Audio is sent to your chosen provider and discarded. Transcripts live locally on your disk, where you can inspect them.</p>
+          </div>
+          <div class="byok-card">
+            <h3>Open options</h3>
+            <p>Groq, Sarvam, OpenAI — pick whichever fits your latency, language, and budget. Add more as they're released.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="india" class="section india">
+      <div class="india-inner">
+        <div class="india-copy">
+          <span class="pill pill-india">🇮🇳 Made for India</span>
+          <h2>Hindi, Tamil, Marathi, Telugu, Kannada, Bengali, Gujarati — and your accent.</h2>
+          <p class="section-sub">
+            Most dictation tools are trained on American English. When you speak Hinglish
+            in a Bangalore café or dictate an email in Tamil, they choke. Voice ships with
+            first-class support for <strong>Sarvam AI</strong> — built in India, trained on Indian
+            speech — so you can dictate in the language you actually think in.
+          </p>
+
+          <ul class="india-list">
+            <li><strong>Saarika v2.5 & Saaras v3</strong> — Sarvam's best STT models, selectable in Settings.</li>
+            <li><strong>12+ Indian languages</strong> including Hindi, Bengali, Tamil, Telugu, Marathi, Gujarati, Kannada, Malayalam, Punjabi, Odia.</li>
+            <li><strong>Code-switching</strong> — natural Hinglish, Tanglish, and Kanglish without you toggling anything.</li>
+            <li><strong>Indian accents</strong> in English work too. No more the-app-thinks-you-said-"vibe" when you said "five".</li>
+          </ul>
+
+          <a href="https://github.com/byok-dev/voice-releases/releases/latest" class="btn btn-primary">
+            Try it with your Sarvam key
+          </a>
+        </div>
+
+        <div class="india-card">
+          <div class="india-card-header">
+            <span class="india-card-dot"></span>
+            <span>Sarvam · Saarika v2.5</span>
+          </div>
+          <div class="india-card-body">
+            <p class="india-spoken"><em>Spoken:</em></p>
+            <p class="india-quote">"Yaar, meeting ko thoda reschedule kar do. Client ka call aa gaya hai at five thirty."</p>
+            <p class="india-spoken"><em>Transcribed:</em></p>
+            <p class="india-quote india-quote-out">Yaar, meeting ko thoda reschedule kar do. Client ka call aa gaya hai at 5:30.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section privacy">
+      <h2 class="section-title">Privacy that's not a marketing slide</h2>
+      <div class="privacy-grid">
+        <div>
+          <h3>What stays on your Mac</h3>
+          <ul>
+            <li>Transcripts (last 500, in <code>~/Library/Application Support/voice/</code>)</li>
+            <li>Your API keys (in the same local store, no keychain roundtrip by default)</li>
+            <li>Settings (language, hotkey, provider choices)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>What leaves your Mac</h3>
+          <ul>
+            <li>Audio — sent to the STT provider you configured. That's it.</li>
+            <li>(Optional) Transcript — sent to an LLM for cleanup, if you enable post-processing.</li>
+            <li>Nothing else. No analytics, no crash reports, no "anonymous usage" payload.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="section download">
+      <div class="download-inner">
+        <h2>Download Voice</h2>
+        <p class="section-sub">
+          Universal macOS build, notarized by Apple. Works on Apple Silicon and Intel.
+        </p>
+        <a href="https://github.com/byok-dev/voice-releases/releases/latest" class="btn btn-primary btn-big">
+          Download voice-1.0.0-beta.1.dmg
+        </a>
+        <p class="subnote">
+          After installing, grant Accessibility + Microphone when prompted. First paste will ask for Automation access — click Allow.
+        </p>
+        <div class="download-steps">
+          <div><span>1</span> Open the DMG, drag Voice into Applications.</div>
+          <div><span>2</span> Launch from Spotlight. Paste your Groq or Sarvam API key in Settings.</div>
+          <div><span>3</span> Hold right Option anywhere. Speak. You're done.</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="brand">
+          <svg viewBox="0 0 32 32" width="24" height="24" aria-hidden="true">
+            <rect width="32" height="32" rx="6" fill="#0f172a" />
+            <rect x="3.5"  y="6"  width="3" height="20" rx="1.5" fill="#38bdf8" />
+            <rect x="9"    y="9"  width="3" height="14" rx="1.5" fill="#38bdf8" />
+            <rect x="14.5" y="12" width="3" height="8"  rx="1.5" fill="#38bdf8" />
+            <rect x="20"   y="9"  width="3" height="14" rx="1.5" fill="#38bdf8" />
+            <rect x="25.5" y="6"  width="3" height="20" rx="1.5" fill="#38bdf8" />
+          </svg>
+          <span>Voice</span>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/byok-dev/voice-releases">Releases</a>
+          <a href="https://github.com/byok-dev/voice-releases/issues">Report an issue</a>
+          <a href="https://www.sarvam.ai/">Sarvam AI</a>
+          <a href="https://groq.com/">Groq</a>
+        </div>
+        <p class="footer-fine">Shipped from Bangalore. Built for people who'd rather talk than type.</p>
+      </div>
+    </footer>
+  </body>
+</html>
